@@ -89,30 +89,6 @@ func (c *Calculator) NewPrice(current, min, max int) (int, error) {
 	}
 
 	return highPrice, nil
-
-	// // If we're starting from the min, we can only go up
-	// if newPrice == min {
-	// 	for ; newPrice < max; newPrice += 1 {
-	// 		if c.matchesPricePoint(newPrice) {
-	// 			return newPrice, nil
-	// 		}
-	// 	}
-	//
-	// 	return 0, ErrNoValidPrice
-	// }
-	//
-	// // If we're starting from the max, we can only go down
-	// if newPrice == max {
-	// 	for ; newPrice > min; newPrice -= 1 {
-	// 		if c.matchesPricePoint(newPrice) {
-	// 			return newPrice, nil
-	// 		}
-	// 	}
-	//
-	// 	return 0, ErrNoValidPrice
-	// }
-	//
-	// return newPrice, nil
 }
 
 func (c *Calculator) matchesPricePoint(value int) bool {
@@ -145,8 +121,6 @@ func (c *Calculator) nextLowestPrice(price, min int) (int, int, error) {
 
 	return 0, 0, ErrNoValidPrice
 }
-
-// func (c *Calculator) newPrice(current, min, max, moves int) (int, error) {}
 
 func validatePricePoints(pricePoints []int) ([]int, error) {
 	if len(pricePoints) == 0 {
