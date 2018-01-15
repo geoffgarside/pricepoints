@@ -103,7 +103,7 @@ func (c *Calculator) matchesPricePoint(value int) bool {
 }
 
 func (c *Calculator) nextHighestPrice(price, max int) (int, int, error) {
-	for current := price; current < max; current += 1 {
+	for current := price; current < max; current++ {
 		if c.matchesPricePoint(current) {
 			return current, (current - price), nil
 		}
@@ -113,7 +113,7 @@ func (c *Calculator) nextHighestPrice(price, max int) (int, int, error) {
 }
 
 func (c *Calculator) nextLowestPrice(price, min int) (int, int, error) {
-	for current := price; current >= min; current -= 1 {
+	for current := price; current >= min; current-- {
 		if c.matchesPricePoint(current) {
 			return current, (price - current), nil
 		}
