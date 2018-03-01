@@ -1,2 +1,4 @@
 # Ignore /vendor directory for libraries
 /vendor
+/reports
+/cover.profile
