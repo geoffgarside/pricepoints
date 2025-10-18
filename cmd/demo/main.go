@@ -70,7 +70,7 @@ func main() {
 	}
 
 	out := csv.NewWriter(os.Stdout)
-	out.Write([]string{"Product Name", "Original Price", "Minimum Price", "Maximum Price", "New Price"})
+	_ = out.Write([]string{"Product Name", "Original Price", "Minimum Price", "Maximum Price", "New Price"})
 
 	for _, in := range flag.Args() {
 		err := updateFile(in, c, out)
@@ -149,7 +149,9 @@ func updateFile(in string, c *pricepoints.Calculator, out *csv.Writer) error {
 			row = append(row, price.StringFixed(2))
 		}
 
-		out.Write(row)
+		if err := out.Write(row); err != nil {
+			return err
+		}
 		out.Flush()
 	}
 }
