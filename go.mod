@@ -1,5 +1,5 @@
 module github.com/geoffgarside/pricepoints
 
-go 1.13
+go 1.25.3
 
-require github.com/shopspring/decimal v0.0.0-20171108225254-9ca7f51822d2
+require github.com/shopspring/decimal v1.4.0
