@@ -1,5 +1,8 @@
 # Price Points
 
+[![Go](https://github.com/geoffgarside/pricepoints/actions/workflows/go.yml/badge.svg)](https://github.com/geoffgarside/pricepoints/actions/workflows/go.yml)
+[![codecov](https://codecov.io/gh/geoffgarside/pricepoints/branch/master/graph/badge.svg)](https://codecov.io/gh/geoffgarside/pricepoints)
+
 A Go package for adjusting product prices to conform to specific price point
 constraints. Price points are the units digit of a price (0-9), commonly used in
 retail pricing strategies where prices end in psychologically appealing digits
